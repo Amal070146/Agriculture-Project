@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/css/signup.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-page-container">
+        <header class="login-header">
+            <a href="../templates/home.html" class="back-button">Back</a>
+        </header>
+        
+        <form class="form-container">
+            <h1>SIGN UP</h1>
+            <label for="fullname">Full Name</label>
+            <input type="text" placeholder="eg . John Don" id="fullname" class="input-box">
+            <label for="">Adress</label>
+            <div>
+                <input type="text" placeholder="country eg.india" class="adress-class">
+                <input type="text" placeholder="state eg.kerala" class="adress-class"><br>
+                <input type="text" placeholder="district eg.thrissur" class="adress-class">
+                <input type="text" placeholder="place name eg.ollur" class="adress-class"><br>
+                <input type="number"placeholder="pincode eg.680006" class="adress-class">
+            </div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="someone@example.com" id="email" class="input-box">
+            <label for="phonenumber">Phone no.</label>
+            <input type="number" placeholder="eg.+91 944567780" id="phonenumber" class="input-box">
+            <label for="gender">Gender</label>
+            <select name="" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="none">None</option>
+            </select>
+            <label for="password">Password</label>
+            <input type="password" placeholder=" * * * * * * * " id="password" class="input-box">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" placeholder=" * * * * * * * " id="confirmpassword" class="input-box">
+            <a href=""><button>Submit</button></a>
+            <p>if registered please <a href="../templates/login.html">Sign in</a></p>
+        </form> 
+    
+    </div>
+    
+</body>
+</html>

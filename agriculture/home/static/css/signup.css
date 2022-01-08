@@ -1,0 +1,82 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url(../res/background.png);
+    background-attachment: fixed;
+}
+.login-page-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-header{
+    width: 100%;
+    height:100px;
+    position: fixed;
+    background-color: #199E16;
+    display: flex;
+    align-items: center;
+}
+.back-button{
+    margin-left:4% ;
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: all 0.5s ease 0s;
+}
+.back-button:hover{
+    transform:translate(-20px);
+}
+.form-container{
+    margin-top: 33vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.form-container label{
+    text-align: right;
+    margin-top: 1cm;
+    font-size: larger;
+    font-weight: bold;
+}
+.input-box{
+    width: 300px;
+    height:50px;
+    border-radius: 40px;
+    text-align: center;
+}
+button{
+    border: 0;
+    margin-top:1cm ;
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #199E16;
+    color: white;
+    font-size: larger;
+    transition: all 0.4s ease 0s;
+}
+button:hover{
+    background-color: black;
+    color: white;
+}
+.form-container p{
+    margin-top: 0.5cm;
+}
+.adress-class{
+    width: 150px;
+    height: 25px;
+    border-radius: 40px;
+    margin-bottom: 0.5cm;
+    text-align: center;
+}
+select{
+    border-radius:40px;
+    text-align: center;
+}
