@@ -29,12 +29,22 @@
             <input type="email" placeholder="someone@example.com" id="email" class="input-box">
             <label for="phonenumber">Phone no.</label>
             <input type="number" placeholder="eg.+91 944567780" id="phonenumber" class="input-box">
-            <label for="gender">Gender</label>
-            <select name="" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="none">None</option>
-            </select>
+            
+            <div style="display: flex;justify-content:space-between;margin-top: 1cm;">
+                <div>
+                    <label for="gender">Gender</label>
+                    <select name="" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="age" style="margin-left: 0.5cm;">Age</label>
+                    <input type="number" class="" placeholder="age" id="age" style="text-align: center;width: 100px;border-radius: 40px;">
+                </div>
+            </div>
+
             <label for="password">Password</label>
             <input type="password" placeholder=" * * * * * * * " id="password" class="input-box">
             <label for="confirmpassword">Confirm Password</label>

@@ -1,0 +1,119 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url(../res/background.png);
+    background-attachment: fixed;
+    background-size:200px 200px ;
+}
+.table-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-header{
+    width: 100%;
+    height:100px;
+    position: fixed;
+    background-color: #199E16;
+    display: flex;
+    align-items: center;
+}
+.back-button{
+    margin-left:4% ;
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: all 0.5s ease 0s;
+}
+.back-button:hover{
+    transform:translate(-20px);
+}
+table,tr,th,td{
+    margin-top: 2.8cm;
+    border: 1px solid black;
+    font-size: x-large;
+    text-align: center;
+    align-items: center;
+}
+table{
+    border: 0.1cm solid black;
+    border-radius: 20px;
+    width: 100%;
+}
+table th{
+    background-color: black;
+    height: 50px;
+    color: white;
+    border-radius: 40px;
+}
+td{
+    border-radius: 40px;
+}
+table td input{
+    text-align: center; 
+    border: none
+}
+.submit-button{
+    border: none;
+}
+.submit-button button{
+    width:70px;
+    border-radius:40px;
+    font-size: medium;
+    color: black;
+    background-color: none;
+    border: none;
+    font-weight: bold;
+    transition: all 0.4s ease 0s;
+}
+.submit-button button:hover{
+    color: white;
+    background-color: black;
+}
+@media screen and (max-width:1200px){
+    body{
+        background-size: 100px 100px;
+    }
+    table,tr,th,td{
+        font-size: medium;
+        
+    }
+    table th{
+        height: 40px;
+    }
+}
+@media screen and (max-width:800px){
+    table,tr,th,td{
+        font-size: small;
+    }
+}
+@media screen and (max-width:600px){
+    table,tr,th,td{
+        font-size: smaller;
+    }
+    table th{
+        height: 30px;
+    }
+    .submit-button button{
+        height: 40px;
+        width:60px;
+        font-size: small;
+    }
+}
+@media screen and (max-width:500px){
+    
+    .submit-button button{
+        height: 30px;
+        width:50px;
+        font-size: 13px;
+    }
+}
+
+
+
+
+
