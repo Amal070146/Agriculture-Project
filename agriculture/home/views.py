@@ -19,29 +19,34 @@ def retailers_table(request):
 
 def login(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
+        email = request.POST.get('email')
         password = request.POST.get('password')
 
         try:
-            user = User.objects.get(name=name)
+            user = User.objects.get(email=email)
 
             if user.password == password:
                 if user.occupation == 'farmer':
-                    return redirect(farmers_table)
+                    return redirect('fam_coma.html')
                 elif user.occupation == 'retailer':
                     return redirect(retailers_table)
                 else:
-                    request.session['uname'] = name
+                    request.session['uname'] = user.name
                     return (request)
             else:
                 data = {'status':"Incorrect Password!!!"}
+                print(data)
                 return render(request,'login.html',context=data)
+
 
         except Exception as e:
             data = {'status':"User does not exists! You have to register first."}
+            print(data)
             return render(request,'signup.html',context=data)
     else:
-        return HttpResponse("Something went wrong!!!!!")
+        print('kundan cp')
+        return render(request,"login.html")
+    
 
 
 # def signup(request):
@@ -73,10 +78,17 @@ def signup(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
+        occupation = request.POST.get('occupation')
 
         if(password == confirm_password):
-            user = User(uid=uid,first_name=first_name,last_name=last_name,adr=adr,mobile=mobile,age=age,gender=gender,email=email,password=password)
-            if request.method == 'GET':
-                user.occupation = request.GET['occupation']
+            user = User(uid=uid,occupation=occupation,first_name=first_name,last_name=last_name,adr=adr,mobile=mobile,age=age,gender=gender,email=email,password=password)
             user.save()
-    return render(request, 'signup.html')
+        return render(request, 'signup.html')
+
+    if request.method == 'GET':
+        occupation = request.GET['occupation']
+        print(occupation)
+        return render(request, 'signup.html',{'occupation':occupation})
+        
+            
+    

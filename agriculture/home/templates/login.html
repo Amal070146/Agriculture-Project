@@ -13,12 +13,13 @@
             <a href="../#home" class="back-button">Back</a>
         </header>
         
-        <form class="form-container">
+        <form class="form-container" method='POST'>
+            {% csrf_token %}
             <h1>LOGIN</h1>
             <label for="email">Email</label>
-            <input type="email" placeholder="someone@example.com" id="email" class="input-box" required>
+            <input type="email" placeholder="someone@example.com" id="email" name="email" class="input-box" required>
             <label for="password">Password</label>
-            <input type="password" placeholder=" * * * * * * * " id="password" class="input-box" required>
+            <input type="password" placeholder=" * * * * * * * " id="password" name="password" class="input-box" required>
             <a href=""><button>Submit</button></a>
             <p>if not registered please <a href="../signup">Sign up</a></p>
         </form> 

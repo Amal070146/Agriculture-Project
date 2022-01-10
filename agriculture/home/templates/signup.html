@@ -13,7 +13,8 @@
             <a href="../#home" class="back-button">Back</a>
         </header>
         
-        <form class="form-container">
+        <form class="form-container"method="POST">
+            {% csrf_token %}
             <h1>SIGN UP</h1>
             <label for="first-name">First Name</label>
             <input type="text" placeholder="eg.John" name="first_name" class="input-box" id="first-name">
@@ -40,13 +41,14 @@
                     <input type="number" class="" name="age" placeholder="age" id="age" pattern ="[18-100]" style="text-align: center;width: 100px;border-radius: 40px;">
                 </div>
             </div>
+            <input type="hidden" name="occupation" value="{{ occupation }}">
 
             <label for="password">Password</label>
             <input type="password" placeholder=" * * * * * * * " name="password" minlength="8" id="password" class="input-box" autocomplete="off" >
             <label for="confirmpassword">Confirm Password</label>
             <input type="password" placeholder=" * * * * * * * " name="confirm_password" minlength="8" id="confirmpassword" class="input-box" autocomplete="off">
             <a href=""><button>Submit</button></a>
-            <p>if registered please <a href="login">Sign in</a></p>
+            <p>if registered please <a href="../login">Sign in</a></p>
         </form> 
     
     </div>
