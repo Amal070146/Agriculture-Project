@@ -24,7 +24,7 @@
             <label for="email">Email</label>
             <input type="email" placeholder="someone@example.com" name="email" id="email" class="input-box">
             <label for="phonenumber">Phone no.</label>
-            <input type="number" placeholder="eg.+91 944567780" name="mobile" id="phonenumber" class="input-box">
+            <input type="number" placeholder="eg.+91 944567780" name="mobile" title="Numers only" pattern="[6-9]{1}[0-9]{9}" autocomplete="off" id="phonenumber" class="input-box">
             
             <div style="display: flex;justify-content:space-between;margin-top: 1cm;">
                 <div>
@@ -37,14 +37,14 @@
                 </div>
                 <div>
                     <label for="age" style="margin-left: 0.5cm;">Age</label>
-                    <input type="number" class="" name="age" placeholder="age" id="age" style="text-align: center;width: 100px;border-radius: 40px;">
+                    <input type="number" class="" name="age" placeholder="age" id="age" pattern ="[18-100]" style="text-align: center;width: 100px;border-radius: 40px;">
                 </div>
             </div>
 
             <label for="password">Password</label>
-            <input type="password" placeholder=" * * * * * * * " name="password" minlength="8" id="password" class="input-box">
+            <input type="password" placeholder=" * * * * * * * " name="password" minlength="8" id="password" class="input-box" autocomplete="off" >
             <label for="confirmpassword">Confirm Password</label>
-            <input type="password" placeholder=" * * * * * * * " name="confirm_password" minlength="8" id="confirmpassword" class="input-box">
+            <input type="password" placeholder=" * * * * * * * " name="confirm_password" minlength="8" id="confirmpassword" class="input-box" autocomplete="off">
             <a href=""><button>Submit</button></a>
             <p>if registered please <a href="login">Sign in</a></p>
         </form> 

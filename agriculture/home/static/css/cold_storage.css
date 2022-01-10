@@ -4,3 +4,81 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+body{
+    background-image: url(../res/background.png);
+    background-attachment: fixed;
+} 
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-header{
+    position:relative;
+    width: 100%;
+    height:100px;
+    position: fixed;
+    background-color: #199E16;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+.back-button{
+    position: absolute;
+    left: 2%;
+    margin-left:4% ;
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: all 0.5s ease 0s;
+}
+.back-button:hover{
+    transform:translate(-20px);
+}
+.form-container{
+    margin-top: 2.8cm;
+}
+table,tr,th,td{
+    border: 1px solid black;
+    font-size: x-large;
+    text-align: center;
+    align-items: center;
+}
+table{
+    border: 0.1cm solid black;
+    border-radius: 20px;
+    width: 100%;
+}
+table th{
+    background-color: black;
+    height: 50px;
+    color: white;
+    border-radius: 40px;
+}
+td{
+    border-radius: 40px;
+}
+table td input{
+    text-align: center; 
+    border: none;
+    outline: none;
+}
+.submit-button{
+    border: none;
+}
+.submit-button button{
+    width:70px;
+    border-radius:40px;
+    font-size: medium;
+    color: black;
+    background-color: none;
+    border: none;
+    font-weight: bold;
+    transition: all 0.4s ease 0s;
+}
+.submit-button button:hover{
+    color: white;
+    background-color: black;
+}
