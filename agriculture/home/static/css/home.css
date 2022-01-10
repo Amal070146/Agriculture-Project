@@ -7,6 +7,7 @@
 body{
     background-image: url(../res/background.png);
     background-attachment: fixed;
+    
 }
 .home-page-container{
     height: fit-content;
@@ -160,10 +161,11 @@ li{
     border: 0.2cm ;
     border-radius: 10px;
     width: 100%;
-    height: 50vh;
+    height: 75vh;
     object-position: center;
     object-fit: cover;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     transition: 5s;
     animation: animation-1;
@@ -174,9 +176,10 @@ li{
     animation-timing-function: ease-in-out;
 }
 @keyframes animation-1{
-    0%{background-image: url(../res/farmers.jpg);}
-    50%{background-image: url(../res/retail.jpg);}
-    100%{background-image: url(../res/cold\ storage.jpg);}
+    0%{background-image: url(../res/animationimage1.jpg);}
+    25%{background-image: url(../res/animationimage2.jpg);}
+    50%{background-image: url(../res/animationimage3.jpg);}
+    100%{background-image: url(../res/animationimage4.jpg);}
 
 }
 .footer{

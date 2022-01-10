@@ -1,0 +1,175 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url(../res/background.png);
+    background-attachment: fixed;
+}
+.table-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-header{
+    z-index: 9;
+    width: 100%;
+    height:100px;
+    position:fixed;
+    background-color: #199E16;
+    display: flex;
+    align-items: center;
+}
+.back-button{
+    margin-left:4% ;
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: all 0.5s ease 0s;
+}
+.back-button:hover{
+    transform:translate(-20px);
+}
+
+.table-container div{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1cm;
+}
+.container{
+    margin-top: 2.6cm;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+.container video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+}
+.links-container{
+    position: absolute;
+    top: 50%;
+}
+
+.links-container a button{
+    z-index: 1;
+    margin: 1cm;
+    width: 500px;
+    height: 100px;
+    border: 0.1cm solid white;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    background: transparent;
+    transition: all 0.4s ease 0s;
+}
+.links-container  a button:hover{
+    background-color: black;
+    color: white;
+}
+table,tr,th,td{
+    border: 1px solid black;
+    font-size: x-large;
+    text-align: center;
+    align-items: center;
+}
+table{
+    border: 0.1cm solid black;
+    border-radius: 20px;
+    width: 100%;
+}
+table th{
+    background-color: black;
+    height: 50px;
+    color: white;
+    border-radius: 40px;
+}
+td{
+    border-radius: 40px;
+}
+table td input{
+    text-align: center; 
+    border: none;
+    outline: none;
+}
+.submit-button{
+    border: none;
+}
+.submit-button button{
+    width:70px;
+    border-radius:40px;
+    font-size: medium;
+    color: black;
+    background:transparent;
+    border: none;
+    font-weight: bold;
+    transition: all 0.4s ease 0s;
+}
+.submit-button button:hover{
+    color: white;
+    background-color: black;
+}
+
+@media screen and (max-width:1200px){
+    body{
+        background-size: 100px 100px;
+    }
+    table,tr,th,td{
+        font-size: medium;
+        
+    }
+    table th{
+        height: 40px;
+    }
+    .links-container  a button{
+        margin: 1cm;
+        width: 355px;
+        height: 90px;
+        font-size: x-large;
+        
+    }
+}
+@media screen and (max-width:800px){
+    table,tr,th,td{
+        font-size: small;
+    }
+    .links-container  a button{
+        margin: 0.25cm;
+        width: 300px;
+        height: 90px;
+        font-size: larger;
+        
+    }
+}
+@media screen and (max-width:600px){
+    table,tr,th,td{
+        font-size: smaller;
+    }
+    table th{
+        height: 30px;
+    }
+    .submit-button button{
+        height: 40px;
+        width:60px;
+        font-size: small;
+    }
+    .links-container{
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width:500px){
+    
+    .submit-button button{
+        height: 30px;
+        width:50px;
+        font-size: 13px;
+    }
+}

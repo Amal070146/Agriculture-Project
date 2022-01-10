@@ -11,7 +11,7 @@ def home(request):
 
 def farmers_table(request):
     # grocery_list = {'grocery':Grocery.objects.all()}
-    return render( request,'farmers-table.html')
+    return render( request,'farmers_table.html')
 
 def login(request):
     return render( request,'login.html')

@@ -8,6 +8,7 @@ body{
     background-image: url(../res/background.png);
     background-attachment: fixed;
 }
+    
 .login-page-container{
     display: flex;
     flex-direction: column;

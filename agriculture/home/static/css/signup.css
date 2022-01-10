@@ -7,6 +7,7 @@
 body{
     background-image: url(../res/background.png);
     background-attachment: fixed;
+    
 }
 .login-page-container{
     display: flex;
@@ -68,6 +69,9 @@ button:hover{
 }
 .form-container p{
     margin-top: 0.5cm;
+}
+#occupation option{
+    font-size:large;
 }
 .adress-class{
     width: 150px;
