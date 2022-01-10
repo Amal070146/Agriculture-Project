@@ -15,9 +15,13 @@
         
         <form class="form-container">
             <h1>SIGN UP</h1>
-            <label for="fullname">Full Name</label>
-            <input type="text" placeholder="eg . John Don" id="fullname" class="input-box">
-            <label for="">Adress</label>
+<!--            <label for="fullname">Full Name</label>-->
+<!--            <input type="text" placeholder="eg . John Don" id="fullname" class="input-box">-->
+            <label>First Name</label>
+            <input type="text" placeholder="eg.John" name="first_name" class="input-box">
+            <label>Last Name</label>
+            <input type="text" placeholder="eg.Don" name="last_name" class="input-box">
+            <label for="">Address</label>
             <div>
                 <input type="text" placeholder="country eg.india" class="adress-class">
                 <input type="text" placeholder="state eg.kerala" class="adress-class"><br>
@@ -25,21 +29,21 @@
                 <input type="text" placeholder="place name eg.ollur" class="adress-class"><br>
                 <input type="number"placeholder="pincode eg.680006" class="adress-class">
             </div>
-            <label for="occupation">Occupation</label>
-            <select name="" id="occupation" class="input-box">
-                <option value="farmer">Farmer</option>
-                <option value="retailer">Retailer</option>
-                <option value="cold storage">Cold Storage</option>
-            </select>
+<!--            <label for="occupation">Occupation</label>-->
+<!--            <select type="hidden" name="" id="occupation" class="input-box">-->
+<!--                <option value="farmer">Farmer</option>-->
+<!--                <option value="retailer">Retailer</option>-->
+<!--                <option value="cold storage">Cold Storage</option>-->
+<!--            </select>-->
             <label for="email">Email</label>
-            <input type="email" placeholder="someone@example.com" id="email" class="input-box">
+            <input type="email" placeholder="someone@example.com" name="email" id="email" class="input-box">
             <label for="phonenumber">Phone no.</label>
-            <input type="number" placeholder="eg.+91 944567780" id="phonenumber" class="input-box">
+            <input type="number" placeholder="eg.+91 944567780" name="mobile" id="phonenumber" class="input-box">
             
             <div style="display: flex;justify-content:space-between;margin-top: 1cm;">
                 <div>
                     <label for="gender">Gender</label>
-                    <select name="" id="gender">
+                    <select name="gender" id="gender" >
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="none">None</option>
@@ -47,14 +51,14 @@
                 </div>
                 <div>
                     <label for="age" style="margin-left: 0.5cm;">Age</label>
-                    <input type="number" class="" placeholder="age" id="age" style="text-align: center;width: 100px;border-radius: 40px;">
+                    <input type="number" class="" name="age" placeholder="age" id="age" style="text-align: center;width: 100px;border-radius: 40px;">
                 </div>
             </div>
 
             <label for="password">Password</label>
-            <input type="password" placeholder=" * * * * * * * " id="password" class="input-box">
+            <input type="password" placeholder=" * * * * * * * " name="password" minlength="8" id="password" class="input-box">
             <label for="confirmpassword">Confirm Password</label>
-            <input type="password" placeholder=" * * * * * * * " id="confirmpassword" class="input-box">
+            <input type="password" placeholder=" * * * * * * * " name="confirm_password" minlength="8" id="confirmpassword" class="input-box">
             <a href=""><button>Submit</button></a>
             <p>if registered please <a href="login">Sign in</a></p>
         </form> 
