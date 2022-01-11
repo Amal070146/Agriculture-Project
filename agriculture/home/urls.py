@@ -6,10 +6,17 @@ from home import views
 
 urlpatterns = [
 	path("", views.home),
-	path("farmers_table/",views.farmers_table),
-	path("retailers_table/",views.retailers_table),
 	path("login/",views.login),
 	path("signup/",views.signup),
+
+	#farmers
+	path("farmers_table/",views.farmers_table),
+
+	#retailers
+	path("retailers_table/",views.retailers_table),
+
+	#cold storage
+	path("cold_storage/",views.cold_storage)
 
 
 	]
