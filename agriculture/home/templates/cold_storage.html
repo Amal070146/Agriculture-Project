@@ -12,7 +12,42 @@
         <header class="login-header">
             <a href="../#home" class="back-button">Back</a>
             <h1>COLD STORAGE :</h1>
+            <div class="button-container">
+                <button class="button-add" id="add-button">add products</button>
+                <button class="button-delete" id="delete-button"> delete products</button>
+            </div>
+            
         </header>
+        <div>
+            <div id="modal-add-row" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close">&times;</span>
+                    <h1>Add Products</h1>
+                    <form class="modal-form">
+                        <label for="product-name">Name of the Product</label>
+                        <input type="text" name="" id="product-name" class="modal-input">
+                        <label for="max-space">Max Storage Space</label>
+                        <input type="number" name="" id="max-space" class="modal-input">
+                        <label for="avl-space">Avl Storage Space</label>
+                        <input type="number" name="" id="avl-space" class="modal-input">
+                        <button class="submit-button">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="modal-delete-row" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close1">&times;</span>
+                    <h1>Delete Products</h1>
+                    <form class="modal-form">
+                        <label for="product-id">Name of the Product</label>
+                        <input type="text" name="" id="product-name" class="modal-input">
+                        <button class="submit-button">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="form-container">
             <form>
                 <table>
@@ -33,6 +68,38 @@
                 </table>
             </form>
         </div>
-    
+        <script>
+
+            var modal = document.getElementById("modal-add-row");
+            var btn = document.getElementById("add-button");
+            var close = document.getElementById("close"); 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+            close.onclick = function() {
+                modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            var modal1 = document.getElementById("modal-delete-row");
+            var btn1 = document.getElementById("delete-button");
+            var close1 = document.getElementById("close1"); 
+            btn1.onclick = function() {
+                modal1.style.display = "block";
+            }
+            close1.onclick = function() {
+                modal1.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == modal1) {
+                    modal1.style.display = "none";
+                }
+            }
+        </script>
+    </div>
 </body>
 </html>
