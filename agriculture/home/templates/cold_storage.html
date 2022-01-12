@@ -23,14 +23,15 @@
                 <div class="modal-content">
                     <span class="close" id="close">&times;</span>
                     <h1>Add Products</h1>
-                    <form class="modal-form">
+                    <form class="modal-form" method="POST">
+                        {% csrf_token %}
                         <label for="product-name">Name of the Product</label>
-                        <input type="text" name="" id="product-name" class="modal-input">
+                        <input type="text" name="pname" id="product-name" class="modal-input">
                         <label for="max-space">Max Storage Space</label>
-                        <input type="number" name="" id="max-space" class="modal-input">
+                        <input type="number" name="max_str" id="max-space" class="modal-input">
                         <label for="avl-space">Avl Storage Space</label>
-                        <input type="number" name="" id="avl-space" class="modal-input">
-                        <button class="submit-button">submit</button>
+                        <input type="number" name="avl_str" id="avl-space" class="modal-input">
+                        <input type="submit" value="Submit" class="submit-button">
                     </form>
                 </div>
             </div>
@@ -40,10 +41,11 @@
                 <div class="modal-content">
                     <span class="close" id="close1">&times;</span>
                     <h1>Delete Products</h1>
-                    <form class="modal-form">
+                    <form class="modal-form" method="post">
+                        {% csrf_token %}
                         <label for="product-id">Name of the Product</label>
                         <input type="text" name="" id="product-name" class="modal-input">
-                        <button class="submit-button">submit</button>
+                        <input type="submit" value="Submit"  class="submit-button" >
                     </form>
                 </div>
             </div>
@@ -59,12 +61,16 @@
                         <th>Add</th>
                         <th>Delete</th>
                     </tr>
-                    {% for c in cold_storage %}
+                    {% for c in data %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ }}</td>
+                        <td>{{ c.cs_pname }}</td>
+                        <td>{{ c.cs_max_str }}</td>
+                        <td>{{ c.cs_avl_str }}</td>
+                        <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
+                        <td><input type="number" name="" id="#" placeholder=" eg.. 20000kg"></td>
                     </tr>
-                    
+                    {% endfor %}
                 </table>
             </form>
         </div>
