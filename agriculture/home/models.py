@@ -19,7 +19,7 @@ class User(models.Model):
 class Cold_storage(models.Model):
     cs_own = models.ForeignKey(User,on_delete=models.CASCADE)
     cs_pname = models.CharField(max_length=40)
-    cs_max_str = models.CharField(max_length=70)
-    cs_avl_str = models.CharField(max_length=70)
+    cs_max_str = models.IntegerField()
+    cs_avl_str = models.IntegerField()
     def __str__(self):
         return f"{self.cs_own.first_name} {self.cs_own.last_name} -> \t\t{self.cs_pname}\t\tMax:{self.cs_max_str}"

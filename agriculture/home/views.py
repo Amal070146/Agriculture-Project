@@ -16,9 +16,9 @@ def login(request):
             if user.password == password:
                 request.session['uid'] = user.uid
                 if user.occupation == 'farmer':
-                    return redirect('fam_coma.html')
+                    return redirect('/farmers_table/')
                 elif user.occupation == 'retailer':
-                    return redirect(retailers_table)
+                    return redirect('/retailers_table/')
                 else:
                     return redirect("/cold_storage/")
             else:
@@ -60,14 +60,29 @@ def cold_storage(request):
     uid = request.session['uid']
     current_user = User.objects.get(uid=uid)
     if request.method == "POST":
-        if request.POST.get('change') == 'add':
-            value = request.POST.get('value')
-
+        add = request.POST.get('add')
+        delete = request.POST.get('delete')
         pname = request.POST.get('pname')
-        max_str = request.POST.get('max_str')
-        avl_str = request.POST.get('avl_str')
-        cs = Cold_storage(cs_own = current_user, cs_pname = pname, cs_max_str = max_str, cs_avl_str = avl_str)
-        cs.save()
+        print(add,delete)
+        if (add == None and delete == None):
+            max_str = request.POST.get('max_str')
+            avl_str = request.POST.get('avl_str')
+            pname = request.POST.get('pname')
+            if (max_str==None and avl_str==None):
+                cs2 = Cold_storage.objects.get(cs_own = uid, cs_pname = pname)
+                cs2.delete()
+            elif avl_str <= max_str:
+                print('saved pro')
+                cs = Cold_storage(cs_own=current_user, cs_pname=pname, cs_max_str=max_str, cs_avl_str=avl_str)
+                cs.save()
+
+        else:
+            cs1 = Cold_storage.objects.get(cs_own=uid, cs_pname=pname)
+            cs1.cs_avl_str = cs1.cs_avl_str + int(delete) - int(add)
+            print('saved add')
+            if cs1.cs_avl_str <= cs1.cs_max_str:
+                cs1.save()
+
     my_cold_storage = Cold_storage.objects.filter(cs_own = uid)
     context = {"data":my_cold_storage}
     return render(request, 'cold_storage.html', context = context)
@@ -76,7 +91,8 @@ def cold_storage(request):
 #Farmers Management system
 
 def farmers_table(request):
-    return render(request, 'farmers_table.html')
+    return render(request, 'farmers_coma.html')
+
 
 #Farmers Management system
 

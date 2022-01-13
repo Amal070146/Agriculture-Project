@@ -25,6 +25,7 @@
                     <h1>Add Products</h1>
                     <form class="modal-form" method="POST">
                         {% csrf_token %}
+
                         <label for="product-name">Name of the Product</label>
                         <input type="text" name="pname" id="product-name" class="modal-input">
                         <label for="max-space">Max Storage Space</label>
@@ -44,14 +45,14 @@
                     <form class="modal-form" method="post">
                         {% csrf_token %}
                         <label for="product-id">Name of the Product</label>
-                        <input type="text" name="" id="product-name" class="modal-input">
+                        <input type="text" name="pname" id="product-name" class="modal-input">
                         <input type="submit" value="Submit"  class="submit-button" >
                     </form>
                 </div>
             </div>
         </div>
         <div class="form-container">
-            <form>
+
                 <table>
                     <tr>
                         <th>Sl.no</th>
@@ -62,17 +63,21 @@
                         <th>Delete</th>
                     </tr>
                     {% for c in data %}
-                    <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ c.cs_pname }}</td>
-                        <td>{{ c.cs_max_str }}</td>
-                        <td>{{ c.cs_avl_str }}</td>
-                        <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
-                        <td><input type="number" name="" id="#" placeholder=" eg.. 20000kg"></td>
-                    </tr>
+                    <form class="modal-form" method="POST">
+                    {% csrf_token %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ c.cs_pname }}<input type="hidden" name="pname" value="{{c.cs_pname}}"</td>
+                            <td>{{ c.cs_max_str }}</td>
+                            <td>{{ c.cs_avl_str }}</td>
+                            <td>{{ c.add }}<input type="number" name="add" value="0" id="" placeholder=" eg.. 20000kg"></td>
+                            <td>{{ c.delete }}<input type="number" name="delete" value="0" id="#" placeholder=" eg.. 20000kg"></td>
+                            <td><input type="submit" value="Submit"  class="submit-button" ></td>
+                        </tr>
+                     </form>
                     {% endfor %}
                 </table>
-            </form>
+
         </div>
         <script>
 
