@@ -91,7 +91,7 @@ def cold_storage(request):
 #Farmers Management system
 
 def farmers_table(request):
-    return render(request, 'farmers_coma.html')
+    return render(request, 'fam_coma.html')
 
 
 #Farmers Management system
