@@ -13,19 +13,53 @@
             <a href="../#home" class="back-button">Back</a>
         </header>
         <div class="selection-container">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            
-            
+            <div class="information-container" id="add-button">
+                <h1>name of the cold storage</h1>
+            </div>
+            <div>
+                <div id="farmer-add-row" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close">&times;</span>
+                        <h1>name of the cold storage</h1>
+                        <table>
+                            <tr>
+                                <th>Sl.No</th>
+                                <th>Name of Products</th>
+                                <th>Maximum Storage Capacity</th>
+                                <th>Available Storage</th>
+                                <th>Available with farmers</th>
+                            </tr>
+                            <tr>
+                                <td>1.</td>
+                                <td>Rice</td>
+                                <td>5000000 kg</td>
+                                <td>2000000 kg</td>
+                                <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
+                                <td class="submit-button"><input type="submit" class="button" value="submit"></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
-    
+    <script>
+        var modal = document.getElementById("farmer-add-row");
+        var btn = document.getElementById("add-button");
+        var close = document.getElementById("close"); 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        close.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

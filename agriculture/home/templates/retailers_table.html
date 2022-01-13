@@ -19,49 +19,106 @@
                 <a href="#cold-storage"><button>From Cold Storage</button></a>
             </div>
         </div>
-        <div id="farmers">
-            <h1>Farmers</h1>
-            <table>
-                <tr>
-                    <th>Sl.No</th>
-                    <th>Name of Products</th>
-                    <th>Maximum Storage Capacity</th>
-                    <th>Available Storage</th>
-                    <th>Your Requirment</th>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Rice</td>
-                    <td>5000000 kg</td>
-                    <td>2000000 kg</td>
-                    <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
-                    <td class="submit-button"><a href="#"><button>Submit</button></a></td>
-                </tr>
-            </table>
+        <div class="selection-container" id="farmers">
+            <div class="information-container" id="farmer-button">
+                <h1>farmers name</h1>
+                <div id="farmer-row" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close">&times;</span>
+                        <h1>details of the farmers</h1>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
+                                <td class="submit-button"><input type="submit" class="button" value="submit"></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="cold-storage">
-            <h1>Cold Storage</h1>
-            <table>
-                <tr>
-                    <th>Sl.No</th>
-                    <th>Name of Products</th>
-                    <th>Maximum Storage Capacity</th>
-                    <th>Available Storage</th>
-                    <th>Your Requirment</th>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Rice</td>
-                    <td>5000000 kg</td>
-                    <td>2000000 kg</td>
-                    <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
-                    <td class="submit-button"><a href="#"><button>Submit</button></a></td>
-                </tr>
-            </table>
+        <div class="selection-container" id="cold-storage">
+            <div class="information-container" id="cold-storage-button">
+                <h1>cold storage name</h1>
+                <div id="cold-storage-row" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close1">&times;</span>
+                        <h1>details of the farmers</h1>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
+                                <td class="submit-button"><input type="submit" class="button" value="submit"></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
 
     </div>
+    <script>
+        
+        
+        
+        
+        
+        
+        var modal = document.getElementById("farmer-row");
+        var btn = document.getElementById("farmer-button");
+        var close = document.getElementById("close"); 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        close.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var modal1 = document.getElementById("cold-storage-row");
+        var btn1 = document.getElementById("cold-storage-button");
+        var close1 = document.getElementById("close1"); 
+        btn1.onclick = function() {
+            modal1.style.display = "block";
+        }
+        close1.onclick = function() {
+            modal1.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+    </script>
     
 </body>
 </html>

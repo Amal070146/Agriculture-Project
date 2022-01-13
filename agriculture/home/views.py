@@ -3,7 +3,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import User, Cold_storage
 import datetime
 from .templates import *
-import requests.sessions
 
 def home(request):
     return render(request, 'home.html')
