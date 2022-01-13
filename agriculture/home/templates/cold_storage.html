@@ -52,65 +52,65 @@
             </div>
         </div>
         <div class="form-container">
-
-                <table>
-                    <tr>
-                        <th>Sl.no</th>
-                        <th>Product Name</th>
-                        <th>Max. Storage Space</th>
-                        <th>Avl Storage Space</th>
-                        <th>Add</th>
-                        <th>Delete</th>
-                    </tr>
-                    {% for c in data %}
-                    <form class="modal-form" method="POST">
+            <table>
+                <tr>
+                    <th>Sl.no</th>
+                    <th>Product Name</th>
+                    <th>Max. Storage Space</th>
+                    <th>Avl Storage Space</th>
+                    <th>Add</th>
+                    <th>Delete</th>
+                </tr>
+                {% for c in data %}
+                <form class="" method="POST">
                     {% csrf_token %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ c.cs_pname }}<input type="hidden" name="pname" value="{{c.cs_pname}}"</td>
+                            <td>{{ c.cs_pname }}<input type="hidden" name="pname" value="{{c.cs_pname}}"></td>
                             <td>{{ c.cs_max_str }}</td>
                             <td>{{ c.cs_avl_str }}</td>
-                            <td>{{ c.add }}<input type="number" name="add" value="0" id="" placeholder=" eg.. 20000kg"></td>
-                            <td>{{ c.delete }}<input type="number" name="delete" value="0" id="#" placeholder=" eg.. 20000kg"></td>
-                            <td><input type="submit" value="Submit"  class="submit-button" ></td>
+                            <td>{{ c.add }}<input type="number" name="add" value="0" id="#" placeholder=" eg.. 20000kg" class="input-values"></td>
+                            <td>{{ c.delete }}<input type="number" name="delete" value="0" id="#" placeholder=" eg.. 20000kg" class="input-values"></td>
+                            <td class="submit-button-container"><input type="submit" value="Submit"  class="submit-button"></td>
                         </tr>
-                     </form>
-                    {% endfor %}
-                </table>
+                </form>
+                {% endfor %}
+            </table>
 
         </div>
-        <script>
+        
+    </div>
+    <script>
 
-            var modal = document.getElementById("modal-add-row");
-            var btn = document.getElementById("add-button");
-            var close = document.getElementById("close"); 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-            close.onclick = function() {
+        var modal = document.getElementById("modal-add-row");
+        var btn = document.getElementById("add-button");
+        var close = document.getElementById("close"); 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        close.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+        }
 
-            var modal1 = document.getElementById("modal-delete-row");
-            var btn1 = document.getElementById("delete-button");
-            var close1 = document.getElementById("close1"); 
-            btn1.onclick = function() {
-                modal1.style.display = "block";
-            }
-            close1.onclick = function() {
+        var modal1 = document.getElementById("modal-delete-row");
+        var btn1 = document.getElementById("delete-button");
+        var close1 = document.getElementById("close1"); 
+        btn1.onclick = function() {
+            modal1.style.display = "block";
+        }
+        close1.onclick = function() {
+            modal1.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal1) {
                 modal1.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == modal1) {
-                    modal1.style.display = "none";
-                }
-            }
-        </script>
-    </div>
+        }
+    </script>
 </body>
 </html>
