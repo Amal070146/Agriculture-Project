@@ -12,10 +12,11 @@
         <header class="login-header">
             <a href="../#home" class="back-button">Back</a>
         </header>
-        
-        <form class="form-container"method="POST">
+
+        <form class="form-container" method="POST">
             {% csrf_token %}
             <h1>SIGN UP</h1>
+            <span style="font-size:24px">{{ status }}</span>
             <label for="first-name">First Name</label>
             <input type="text" placeholder="eg.John" name="first_name" class="input-box" id="first-name">
             <label for="last-name">Last Name</label>
@@ -42,7 +43,10 @@
                 </div>
             </div>
             <input type="hidden" name="occupation" value="{{ occupation }}">
-
+            {% if occupation == "cold storage" %}
+               <label>Shop Name</label>
+               <input type="text" name="cs_name" value="{{ cs_name }}" class="input-box" placeholder="eg:Depot Storage">
+            {% endif %}
             <label for="password">Password</label>
             <input type="password" placeholder=" * * * * * * * " name="password" minlength="8" id="password" class="input-box" autocomplete="off" >
             <label for="confirmpassword">Confirm Password</label>

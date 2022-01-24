@@ -4,9 +4,10 @@ from django.db import models
 
 class User(models.Model):
     uid = models.AutoField(primary_key=True)
+    cs_name = models.CharField(max_length=50)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    adr = models.CharField(max_length=50)
+    adr = models.CharField(max_length=80)
     email = models.CharField(max_length=40)
     mobile = models.CharField(max_length=10)
     gender = models.CharField(max_length=6)

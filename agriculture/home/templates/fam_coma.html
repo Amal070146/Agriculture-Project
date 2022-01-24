@@ -12,15 +12,17 @@
         <header class="login-header">
             <a href="../#home" class="back-button">Back</a>
         </header>
+        {% for cs in cold_storages %}
         <div class="selection-container">
-            <div class="information-container" id="add-button">
-                <h1>name of the cold storage</h1>
+
+            <div class="information-container" id="{{ forloop.counter }}" onclick='open(this.id)'>
+                <h1>{{ cs.cs_name }}</h1>
             </div>
             <div>
-                <div id="farmer-add-row" class="modal">
+                <div id="farmer-add-row {{ forloop.counter }}" class="modal">
                     <div class="modal-content">
                         <span class="close" id="close">&times;</span>
-                        <h1>name of the cold storage</h1>
+                        <h1 style="text-transform:uppercase;">{{ cs.cs_name }}</h1>
                         <table>
                             <tr>
                                 <th>Sl.No</th>
@@ -29,14 +31,23 @@
                                 <th>Available Storage</th>
                                 <th>Available with farmers</th>
                             </tr>
-                            <tr>
-                                <td>1.</td>
-                                <td>Rice</td>
-                                <td>5000000 kg</td>
-                                <td>2000000 kg</td>
-                                <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
-                                <td class="submit-button"><input type="submit" class="button" value="submit"></td>
-                            </tr>
+                            {% for pr in products %}
+                            {% for prod in pr %}
+                            {% if prod.cs_own.cs_name == cs.cs_name %}
+                                <form class="" method="POST">
+                                {% csrf_token %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ prod.cs_pname}}</td>
+                                        <td>{{ prod.cs_max_str }}</td>
+                                        <td>{{ prod.cs_avl_str }}</td>
+                                        <td>{{ prod.famadd }}<input type="number" name="famadd" value="0" id="" placeholder=" eg.. 20000kg" class="input-values"></td>
+                                        <td class="submit-button"><input type="submit" class="button" value="submit"></td>
+                                    </tr>
+                                </form>
+                            {% endif %}
+                            {% endfor %}
+                            {% endfor %}
                         </table>
                         
                     </div>
@@ -44,22 +55,31 @@
             </div>
 
         </div>
+        {% endfor %}
     </div>
     <script>
         var modal = document.getElementById("farmer-add-row");
         var btn = document.getElementById("add-button");
         var close = document.getElementById("close"); 
-        btn.onclick = function() {
-            modal.style.display = "block";
+<!--        btn.onclick = function() {-->
+<!--            modal.style.display = "block";-->
+<!--        }-->
+
+        const open = (id) => {
+            var modal = document.getElementById("farmer-add-row {id}");
+            console.log("farmer-add-row {id}");
+<!--            modal.style.display = "block";-->
         }
+
+
         close.onclick = function() {
             modal.style.display = "none";
         }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+<!--        window.onclick = function(event) {-->
+<!--            if (event.target == modal) {-->
+<!--                modal.style.display = "none";-->
+<!--            }-->
+<!--        }-->
     </script>
 </body>
 </html>

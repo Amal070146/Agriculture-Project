@@ -27,7 +27,7 @@ def login(request):
                 return render(request, 'login.html', context=data)
         except Exception as e:
             data = {'status':"User does not exists! You have to register first."}
-            print(data)
+            print(email,password)
             return render(request, 'signup.html', context=data)
     else:
         return render(request, "login.html")
@@ -45,8 +45,14 @@ def signup(request):
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
         occupation = request.POST.get('occupation')
+        cs_name = request.POST.get('cs_name')
         if(password == confirm_password):
-            user = User(uid=uid, occupation=occupation, first_name=first_name, last_name=last_name, adr=adr, mobile=mobile, age=age, gender=gender, email=email, password=password)
+            if occupation == 'cold storage':
+                print(cs_name)
+                user = User(uid=uid, occupation=occupation, first_name=first_name, last_name=last_name, adr=adr,
+                            mobile=mobile, age=age, gender=gender, email=email, password=password, cs_name=cs_name)
+            else:
+                user = User(uid=uid, occupation=occupation, first_name=first_name, last_name=last_name, adr=adr, mobile=mobile, age=age, gender=gender, email=email, password=password)
             user.save()
         return render(request, 'signup.html')
     if request.method == 'GET':
@@ -75,6 +81,8 @@ def cold_storage(request):
                 print('saved pro')
                 cs = Cold_storage(cs_own=current_user, cs_pname=pname, cs_max_str=max_str, cs_avl_str=avl_str)
                 cs.save()
+            else:
+                data = {'status': "size of max_str should be greater than avl_str"}
 
         else:
             cs1 = Cold_storage.objects.get(cs_own=uid, cs_pname=pname)
@@ -91,7 +99,11 @@ def cold_storage(request):
 #Farmers Management system
 
 def farmers_table(request):
-    return render(request, 'fam_coma.html')
+    cold_storages = User.objects.filter(occupation='cold storage')
+    product_list = []
+    for cs in cold_storages:
+        product_list.append(Cold_storage.objects.filter(cs_own=cs))
+    return render(request, 'fam_coma.html', {"cold_storages":cold_storages,'products':product_list})
 
 
 #Farmers Management system
