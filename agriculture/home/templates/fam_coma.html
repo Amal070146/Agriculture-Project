@@ -15,13 +15,13 @@
         {% for cs in cold_storages %}
         <div class="selection-container">
 
-            <div class="information-container" id="{{ forloop.counter }}" onclick='open(this.id)'>
+            <div class="information-container" index="{{ forloop.counter }}">
                 <h1>{{ cs.cs_name }}</h1>
             </div>
             <div>
-                <div id="farmer-add-row {{ forloop.counter }}" class="modal">
+                <div id="{{ forloop.counter }}" class="modal">
                     <div class="modal-content">
-                        <span class="close" id="close">&times;</span>
+                        <span class="close" id="close" index="{{ forloop.counter }}">&times;</span>
                         <h1 style="text-transform:uppercase;">{{ cs.cs_name }}</h1>
                         <table>
                             <tr>
@@ -58,28 +58,45 @@
         {% endfor %}
     </div>
     <script>
-        var modal = document.getElementById("farmer-add-row");
-        var btn = document.getElementById("add-button");
-        var close = document.getElementById("close"); 
-<!--        btn.onclick = function() {-->
-<!--            modal.style.display = "block";-->
-<!--        }-->
+//         var modal = document.getElementById("farmer-add-row");
+//         var btn = document.getElementById("add-button");
+//         var close = document.getElementById("close"); 
+// <!--        btn.onclick = function() {-->
+// <!--            modal.style.display = "block";-->
+// <!--        }-->
 
-        const open = (id) => {
-            var modal = document.getElementById("farmer-add-row {id}");
-            console.log("farmer-add-row {id}");
-<!--            modal.style.display = "block";-->
-        }
+//         function open(id) {
+//             var modal = document.getElementById("{id}");
+//             console.log("farmer-add-row {id}");
+// <!--            modal.style.display = "block";-->
+//         }
 
 
-        close.onclick = function() {
+const storageList = Array.from(document.querySelectorAll('.information-container'));
+console.log(storageList);
+
+for(element of storageList) {
+    const id = element.getAttribute('index');
+    console.log(id);
+    const modal = document.getElementById(id);
+    element.addEventListener('click', () => {
+        modal.style.display = "block";
+        modal.childNodes[1].childNodes[1].addEventListener('click',() => {
             modal.style.display = "none";
-        }
-<!--        window.onclick = function(event) {-->
-<!--            if (event.target == modal) {-->
-<!--                modal.style.display = "none";-->
-<!--            }-->
-<!--        }-->
+        })
+    })
+}
+
+
+
+        // close.onclick = function() {
+        //     modal.style.display = "none";
+        // }
+// <!--        window.onclick = function(event) {-->
+// <!--            if (event.target == modal) {-->
+// <!--                modal.style.display = "none";-->
+// <!--            }-->
+// <!--        }-->
     </script>
 </body>
 </html>
