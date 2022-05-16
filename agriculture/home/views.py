@@ -109,4 +109,9 @@ def farmers_table(request):
 #Farmers Management system
 
 def retailers_table(request):
-    return render(request, 'retailers_table.html')
+    cold_storages = User.objects.filter(occupation='cold storage')
+    product_list = []
+    for cs in cold_storages:
+        product_list.append(Cold_storage.objects.filter(cs_own=cs))
+    return render(request, 'retailers_table.html',{"cold_storages":cold_storages,'products':product_list})
+    

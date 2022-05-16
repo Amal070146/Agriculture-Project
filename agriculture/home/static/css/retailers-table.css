@@ -80,7 +80,6 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    background-color: blue;
 
 }
 .information-container{

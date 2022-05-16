@@ -28,15 +28,11 @@
                         <h1>details of the farmers</h1>
                         <table>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th>Sl no.</th>
+                                <th>Product name</th>
+                                <th>Need from farmers</th>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
@@ -49,23 +45,23 @@
             </div>
         </div>
         <div class="selection-container" id="cold-storage">
+            {% for cs in cold_storages %}
             <div class="information-container" id="cold-storage-button">
                 <h1>cold storage name</h1>
-                <div id="cold-storage-row" class="modal">
+                <div id="{{ forloop.counter }}" class="modal">
                     <div class="modal-content">
-                        <span class="close" id="close1">&times;</span>
+                        <span class="close" id="close1" index="{{ forloop.counter }}">&times;</span>
                         <h1>details of the farmers</h1>
                         <table>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th>Sl no</th>
+                                <th>Product name</th>
+                                <th>Available</th>
+                                <th>Need</th>
                             </tr>
+
                             <tr>
-                                <td></td>
-                                <td></td>
+                                <td>{{ forloop.counter }}</td>
                                 <td></td>
                                 <td></td>
                                 <td><input type="number" name="" id="" placeholder=" eg.. 20000kg"></td>
@@ -78,6 +74,7 @@
 
 
             </div>
+            {% endfor %}
         </div>
 
 
@@ -89,20 +86,20 @@
         
         
         
-        var modal = document.getElementById("farmer-row");
-        var btn = document.getElementById("farmer-button");
-        var close = document.getElementById("close"); 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-        close.onclick = function() {
-            modal.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+        // var modal = document.getElementById("farmer-row");
+        // var btn = document.getElementById("farmer-button");
+        // var close = document.getElementById("close"); 
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        // }
+        // close.onclick = function() {
+        //     modal.style.display = "none";
+        // }
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
 
         var modal1 = document.getElementById("cold-storage-row");
         var btn1 = document.getElementById("cold-storage-button");
@@ -118,6 +115,20 @@
                 modal1.style.display = "none";
             }
         }
+        //         const storageList = Array.from(document.querySelectorAll('.information-container'));
+        // console.log(storageList);
+
+        // for(element of storageList) {
+        //     const id = element.getAttribute('index');
+        //     console.log(id);
+        //     const modal = document.getElementById(id);
+        //     element.addEventListener('click', () => {
+        //         modal.style.display = "block";
+        //         modal.childNodes[1].childNodes[1].addEventListener('click',() => {
+        //             modal.style.display = "none";
+        //         })
+        //     })
+        // }
     </script>
     
 </body>

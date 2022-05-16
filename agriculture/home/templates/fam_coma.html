@@ -12,9 +12,8 @@
         <header class="login-header">
             <a href="../#home" class="back-button">Back</a>
         </header>
-        {% for cs in cold_storages %}
         <div class="selection-container">
-
+            {% for cs in cold_storages %}
             <div class="information-container" index="{{ forloop.counter }}">
                 <h1>{{ cs.cs_name }}</h1>
             </div>
@@ -53,9 +52,10 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
         </div>
-        {% endfor %}
+        
     </div>
     <script>
 //         var modal = document.getElementById("farmer-add-row");
